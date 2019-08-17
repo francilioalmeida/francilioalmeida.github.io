@@ -1,0 +1,1 @@
+const api_url = 'https://francilio-frontend-api.firebaseio.com';

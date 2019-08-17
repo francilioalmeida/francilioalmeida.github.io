@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Projeto Final - Francilio - Index</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css">
+    <link rel="stylesheet" href="node_modules/jquery-toast-plugin/dist/jquery.toast.min.css">
+    <link rel="stylesheet" href="css/login.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <div class="container-fluid">
+      <div class="row">
+        <section class="col-lg-2"></section>
+        <section class="col-lg-10">
+          <div class="row mt-3">
+            <div class="col-md-4 offset-md-8" id="alerts"></div>
+          </div>
+
+          <div class="card mt-5">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <h2 class="card-title">Usuários</h2>
+                </div>
+                <div class="col-6 text-right">
+                  <button class="btn btn-dark" data-toggle="modal" data-target="#modal-novo-usuario">Novo Usuário</button>
+                </div>
+              </div>
+              <hr>
+                <table class="table table-hover table-striped">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>Registrado em</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tabela_usuarios">
+                  </tbody>
+                </table>
+              <div id="modal-excluir" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Excluir usuário?</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="alert alert-info">Após exclusão a ação não poderá ser revertida!</div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button type="button" id="confirmar-excluir" class="btn btn-primary">Confirmar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="modal-novo-usuario" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Novo Usuário</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form id="form-cadastro" action="#" method="post">
+            <div class="modal-body">
+              <input required id="cadastro_nome" type="text" class="form-control form-control-lg mt-4" placeholder="Nome"></input>
+              <input required id="cadastro_email" type="email" class="form-control form-control-lg mt-2" placeholder="Email"></input>
+              <input required id="cadastro_senha" type="password" class="form-control form-control-lg mt-2" placeholder="Senha"></input>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button class="btn btn-dark">Confirmar</button>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+    <script src="js/usuarios.js"></script>
+  </body>
+</html>
